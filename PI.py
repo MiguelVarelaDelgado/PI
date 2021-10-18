@@ -53,25 +53,25 @@ def CrearPredicciones(ModeloKNN, ModelosTree, ModeloLR, ModeloSVM,modelRed):
     y_predRed   =modelRed.predict(X_test)
     ##      KNN
     ##print("accuracy del modelo KNN\n",metrics.accuracy_score(y_test, y_predKNN))
-    print("accuracy del modelo KNN\n",metrics.classification_report(y_test, y_predKNN))
+    print("Resumen del modelo KNN\n",metrics.classification_report(y_test, y_predKNN))
     ##      Decision tree}
     ##print("accuracy del modelo Decision tree\n",metrics.accuracy_score(y_test, y_predTree))
-    print("accuracy del modelo Decision tree\n",metrics.classification_report(y_test, y_predTree))
+    print("Resumen del modelo Decision tree\n",metrics.classification_report(y_test, y_predTree))
 
     ##      Logistic Regression
     ##print("accuracy del modelo Logistic Regression\n",metrics.accuracy_score(y_test, y_predLR))
 
 
 
-    print("accuracy del modelo Logistic Regression\n",metrics.classification_report(y_test, y_predLR))
+    print("Resumen del modelo Logistic Regression\n",metrics.classification_report(y_test, y_predLR))
 
     ##      Support Vector Machines
     ##print("accuracy del modelo Support Vector Machines\n",metrics.accuracy_score(y_test, y_predSVM))
-    print("accuracy del modelo Support Vector Machines\n",metrics.classification_report(y_test, y_predSVM))
+    print("Resumen del modelo Support Vector Machines\n",metrics.classification_report(y_test, y_predSVM))
     
     ##      Artificial Neural Network
     ##print("accuracy del modelo red\n",metrics.accuracy_score(y_test, y_predRed))
-    print("accuracy del modelo Artificial Neural Network\n",metrics.classification_report(y_test, y_predRed))
+    print("Resumen del modelo Artificial Neural Network\n",metrics.classification_report(y_test, y_predRed))
     
     return (y_predKNN, y_predTree, y_predLR, y_predSVM,y_predRed )
 def Normalizar(X_prime):
