@@ -2,7 +2,7 @@
 """
 Created on Wed Sep 29 03:07:19 2021
 
-@author: migue
+@author: migue///////////////////BUENO
 """
 import numpy as np
 import pandas as pd
@@ -17,8 +17,8 @@ from sklearn import svm
 from sklearn.neural_network import MLPClassifier
 def LeerCSV(adressTrain):
     W_P=pd.read_csv(adressTrain)
-    X_prime = W_P.iloc[:,[1,2,3,4,5,6]].values
-    Y = W_P.iloc[:,0].values
+    X_prime = W_P.iloc[:,[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]].values
+    Y = W_P.iloc[:,1].values
     return (X_prime, Y)
 def CrearModelos(X_train,X_test,y_train,y_test):    
     ##      KNN
@@ -53,25 +53,25 @@ def CrearPredicciones(ModeloKNN, ModelosTree, ModeloLR, ModeloSVM,modelRed):
     y_predRed   =modelRed.predict(X_test)
     ##      KNN
     ##print("accuracy del modelo KNN\n",metrics.accuracy_score(y_test, y_predKNN))
-    print("Reporte del modelo KNN\n",metrics.classification_report(y_test, y_predKNN))
+    print("accuracy del modelo KNN\n",metrics.classification_report(y_test, y_predKNN))
     ##      Decision tree}
     ##print("accuracy del modelo Decision tree\n",metrics.accuracy_score(y_test, y_predTree))
-    print("Reporte del modelo Decision tree\n",metrics.classification_report(y_test, y_predTree))
+    print("accuracy del modelo Decision tree\n",metrics.classification_report(y_test, y_predTree))
 
     ##      Logistic Regression
     ##print("accuracy del modelo Logistic Regression\n",metrics.accuracy_score(y_test, y_predLR))
-    print("Reporte del modelo Logistic Regression\n",metrics.classification_report(y_test, y_predLR))
+
+
+
+    print("accuracy del modelo Logistic Regression\n",metrics.classification_report(y_test, y_predLR))
 
     ##      Support Vector Machines
     ##print("accuracy del modelo Support Vector Machines\n",metrics.accuracy_score(y_test, y_predSVM))
-    print("Reporte del modelo Support Vector Machines\n",metrics.classification_report(y_test, y_predSVM))
+    print("accuracy del modelo Support Vector Machines\n",metrics.classification_report(y_test, y_predSVM))
     
     ##      Artificial Neural Network
     ##print("accuracy del modelo red\n",metrics.accuracy_score(y_test, y_predRed))
-    print("Reporte del modelo Artificial Neural Network\n",metrics.classification_report(y_test, y_predRed))
-    
-    #y_pred   =modelRed.predict(X_train)
-    #print(metrics.classification_report(y_train, y_pred))
+    print("accuracy del modelo Artificial Neural Network\n",metrics.classification_report(y_test, y_predRed))
     
     return (y_predKNN, y_predTree, y_predLR, y_predSVM,y_predRed )
 def Normalizar(X_prime):
@@ -82,7 +82,7 @@ def Normalizar(X_prime):
 
 
 
-(X_prime, Y) = LeerCSV('Admission2.csv')
+(X_prime, Y) = LeerCSV('breast-cancer.csv')
 
 (X,scaler)=Normalizar(X_prime)
 
@@ -102,3 +102,6 @@ CrearPredicciones(ModeloKNN, ModelosTree, ModeloLR, ModeloSVM, modelRed)
 
 
 
+#y_pred   =modelRed.predict(X_train)
+#print(metrics.classification_report(y_train, y_pred))
+    
